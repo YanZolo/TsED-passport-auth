@@ -15,6 +15,7 @@ import * as rest from "./controllers/rest";
 import * as pages from "./controllers/pages";
 import session from "express-session";
 import { User } from "./models/User";
+import { PassportCtrl } from "./controllers/passport/PassportController";
 const rootDir = __dirname;
 
 @Configuration({
@@ -26,7 +27,8 @@ const rootDir = __dirname;
   componentsScan: [`${rootDir}/services/**/*.ts`, `${rootDir}/protocols/**/*.ts`],
   mount: {
     "/rest": [...Object.values(rest)],
-    "/": [...Object.values(pages)]
+    "/": [...Object.values(pages)],
+    "/passport": PassportCtrl
   },
   swagger: [
     {

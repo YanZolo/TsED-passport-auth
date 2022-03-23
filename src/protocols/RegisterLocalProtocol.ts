@@ -7,7 +7,7 @@ import { UserCreation } from "../models/UserCreation";
 import { UsersService } from "../services/users/UsersServices";
 
 @Protocol({
-  name: "signup",
+  name: "register",
   useStrategy: Strategy,
   settings: {
     usernameField: "email",
